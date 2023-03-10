@@ -18,11 +18,11 @@ def change_saturation(img_hsv, rate:float):
     result_hsv[:, :, 1] = np.clip((result_hsv[:, :, 1].astype(np.float32)*rate), 0, 255)
     return result_hsv
 
-def dynamic_hue_video(img_hsv, fps:int=30, degree:int=1):
+def dynamic_hue_video(filepath, img_hsv, fps:int=30, degree:int=1):
     codec = 'avc1'
     h, w, c = img_hsv.shape
     size = (w, h)
-    out = cv2.VideoWriter('./dynamicHue.mp4', cv2.VideoWriter_fourcc(*codec), fps, size)
+    out = cv2.VideoWriter(filepath, cv2.VideoWriter_fourcc(*codec), fps, size)
     for i in range(180//degree):
         img_new = cv2.cvtColor(change_hue_image(img_hsv, degree), cv2.COLOR_HSV2BGR)
         out.write(img_new)
