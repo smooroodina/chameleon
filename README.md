@@ -6,7 +6,7 @@ Codec used to create mp4: **'H264'**
 > To use this codec, you need to include this file in your project path: **"openh264-1.8.0-win64.dll"**  
 > from https://github.com/cisco/openh264/releases  
 > (only 1.8.0 version works!!)  
-> If you select any other codec, in some cases it may not play depending on the device.
+> If you apply any other codec, in some cases it may not play depending on the device.
 
 
 also you can make it into a **gif** file.  
